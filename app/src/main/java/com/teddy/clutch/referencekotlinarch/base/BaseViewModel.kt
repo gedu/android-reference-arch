@@ -1,4 +1,4 @@
-package com.teddy.clutch.referencekotlinarch.ui.base
+package com.teddy.clutch.referencekotlinarch.base
 
 import android.arch.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope

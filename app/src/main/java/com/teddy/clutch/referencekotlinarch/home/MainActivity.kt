@@ -1,4 +1,4 @@
-package com.teddy.clutch.referencekotlinarch.ui.home
+package com.teddy.clutch.referencekotlinarch.home
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
