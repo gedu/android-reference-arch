@@ -7,12 +7,45 @@
   tools:context=".home.MainActivity">
 
   <TextView
+    android:id="@+id/joke"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
     android:text="Hello World!"
-    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/guideline"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+    android:id="@+id/now_btn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Now"
+    app:layout_constraintEnd_toStartOf="@+id/live_btn"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintHorizontal_chainStyle="spread"
+    app:layout_constraintStart_toStartOf="parent"
+    tools:layout_editor_absoluteY="446dp"
+    tools:ignore="MissingConstraints" />
+
+  <Button
+    android:id="@+id/live_btn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="live data"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toEndOf="@+id/now_btn"
+    tools:layout_editor_absoluteY="445dp"
+    tools:ignore="MissingConstraints" />
+
+  <android.support.constraint.Guideline
+    android:id="@+id/guideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_end="117dp" />
+
 
 </android.support.constraint.ConstraintLayout>
