@@ -18,8 +18,6 @@ class EmptyErrorView(context: Context, attrs: AttributeSet?) : FrameLayout(conte
   init { init() }
 
   private fun init() {
-    val contentView = this.inflate(R.layout.error_view)
-
-    addView(contentView)
+    addView(inflate(R.layout.error_view))
   }
 }
