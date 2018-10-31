@@ -20,9 +20,9 @@ class MainViewModel(private val repository: MainRepository) : BaseViewModel() {
     }
   }
 
-  fun getInmedeatellyRandomJoke() {
+  fun getImmediatelyRandomJoke() {
     this.launch(context = coroutineContext) {
-      val response = repository.getJokeInmediatelly()
+      val response = repository.getJokeImmediately()
       innerJokeResponse.postValue(response)
     }
   }

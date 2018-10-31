@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     })
 
     findViewById<Button>(R.id.now_btn).setOnClickListener {
-      viewModel.getInmedeatellyRandomJoke()
+      viewModel.getImmediatelyRandomJoke()
     }
     findViewById<Button>(R.id.live_btn).setOnClickListener {
       viewModel.getObservableRandomJoke()

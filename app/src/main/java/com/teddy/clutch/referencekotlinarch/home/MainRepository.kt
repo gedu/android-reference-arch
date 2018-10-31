@@ -8,5 +8,5 @@ class MainRepository(private val remoteSource: MainRemoteSource) {
 
   suspend fun getJokeLiveData() = remoteSource.getJoke()
 
-  suspend fun getJokeInmediatelly() = remoteSource.getJokeNow()
+  suspend fun getJokeImmediately() = remoteSource.getJokeNow()
 }

@@ -2,6 +2,7 @@ package com.teddy.clutch.referencekotlinarch.utils.api
 
 import retrofit2.Response
 
+@Suppress("unused")
 sealed class ApiResponse<T> {
   companion object {
     fun <T> create(error: Throwable): ApiErrorResponse<T> {
