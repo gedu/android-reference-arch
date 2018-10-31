@@ -21,6 +21,7 @@ class MainViewModel(private val repository: MainRepository) : BaseViewModel() {
   }
 
   fun getImmediatelyRandomJoke() {
+    innerJokeResponse.value = Resource.loading(null)
     this.launch(context = coroutineContext) {
       val response = repository.getJokeImmediately()
       innerJokeResponse.postValue(response)

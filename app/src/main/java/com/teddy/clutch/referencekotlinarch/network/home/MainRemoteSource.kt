@@ -17,6 +17,7 @@ class MainRemoteSource(private val daddyJokeService: DaddyJokeService) {
     get() = _result as LiveData<Resource<DaddyJoke>>
 
   suspend fun getJoke() = coroutineScope {
+    _result.value = Resource.loading(null)
     val response = daddyJokeService.getRandomJoke().await()
     when (response) {
       is ApiSuccessResponse -> {
