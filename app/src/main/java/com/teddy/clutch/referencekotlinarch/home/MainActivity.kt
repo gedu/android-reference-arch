@@ -33,10 +33,6 @@ class MainActivity : AppCompatActivity() {
   }
 
   private fun setupViewModels() {
-    viewModel.joke.observe(this, Observer {
-      it?.let { resource -> handleJoke(resource) }
-    })
-
     viewModel.repositoryJokeResponse.observe(this, Observer {
       it?.let { resource -> handleJoke(resource) }
     })
@@ -44,9 +40,6 @@ class MainActivity : AppCompatActivity() {
 
   private fun setupListeners() {
     findViewById<Button>(R.id.now_btn).setOnClickListener {
-      viewModel.getImmediatelyRandomJoke()
-    }
-    findViewById<Button>(R.id.live_btn).setOnClickListener {
       viewModel.getObservableRandomJoke()
     }
   }

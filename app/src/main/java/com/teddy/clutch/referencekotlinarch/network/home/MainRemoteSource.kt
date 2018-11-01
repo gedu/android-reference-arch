@@ -32,20 +32,4 @@ class MainRemoteSource(private val daddyJokeService: DaddyJokeService) {
       }
     }
   }
-
-  suspend fun getJokeNow(): Resource<DaddyJoke> {
-    val response = daddyJokeService.getRandomJoke().await()
-    return when (response) {
-      is ApiSuccessResponse -> {
-        val daddyJoke = DaddyJoke(response.body.id, response.body.joke)
-        Resource.success(daddyJoke)
-      }
-      is ApiEmptyResponse -> {
-        Resource.error("No joke", null)
-      }
-      is ApiErrorResponse -> {
-        Resource.error(response.errorMessage, null)
-      }
-    }
-  }
 }

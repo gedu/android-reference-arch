@@ -7,6 +7,4 @@ class MainRepository(private val remoteSource: MainRemoteSource) {
   fun listenResponse() = remoteSource.result
 
   suspend fun getJokeLiveData() = remoteSource.getJoke()
-
-  suspend fun getJokeImmediately() = remoteSource.getJokeNow()
 }
