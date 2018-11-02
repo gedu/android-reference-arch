@@ -7,14 +7,12 @@ import com.teddy.clutch.referencekotlinarch.network.home.DaddyJokeResponse
 import com.teddy.clutch.referencekotlinarch.network.home.MainRemoteSource
 import com.teddy.clutch.referencekotlinarch.utils.api.ApiResponse
 import com.teddy.clutch.referencekotlinarch.utils.view.Status
-import kotlinx.coroutines.CompletableDeferred
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import org.junit.Rule
 import org.junit.Test
 import retrofit2.Response
 
+@ExperimentalCoroutinesApi //For the use of Dispatchers.Unconfined)
 class MainViewModelTest {
 
   @get:Rule

@@ -1,6 +1,5 @@
 <resources>
   <string name="app_name">Reference kotlin arch</string>
   <string name="next_joke">Next joke</string>
-  <string name="next_live_joke">Next live joke</string>
   <string name="something_went_wrong">Something went wrong</string>
 </resources>

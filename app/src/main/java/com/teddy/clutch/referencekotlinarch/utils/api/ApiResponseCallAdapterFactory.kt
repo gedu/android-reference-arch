@@ -5,7 +5,6 @@ import kotlinx.coroutines.Deferred
 import retrofit2.*
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
-import java.util.concurrent.Executor
 
 class ApiResponseCallAdapterFactory private constructor() : CallAdapter.Factory() {
   companion object {
@@ -33,7 +32,7 @@ class ApiResponseCallAdapterFactory private constructor() : CallAdapter.Factory(
     }
 
     val bodyType = CallAdapter.Factory.getParameterUpperBound(0, observableType)
-    return ApiCall2Adapter<Any>(bodyType, retrofit.callbackExecutor())
+    return ApiCall2Adapter<Any>(bodyType)
   }
 }
 
@@ -42,8 +41,7 @@ class ApiResponseCallAdapterFactory private constructor() : CallAdapter.Factory(
  * @param <R>
 </R> */
 class ApiCall2Adapter<R>(
-    private val responseType: Type,
-    private val executor: Executor?
+    private val responseType: Type
 ) : CallAdapter<R, Deferred<ApiResponse<R>>> {
 
   override fun responseType() = responseType
