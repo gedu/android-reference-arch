@@ -3,7 +3,7 @@ package com.teddy.clutch.referencekotlinarch.home
 import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.Button
+import android.support.v7.widget.CardView
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.teddy.clutch.referencekotlinarch.R
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
   }
 
   private fun setupListeners() {
-    findViewById<Button>(R.id.now_btn).setOnClickListener {
+    findViewById<CardView>(R.id.now_btn).setOnClickListener {
       viewModel.getObservableRandomJoke()
     }
   }
