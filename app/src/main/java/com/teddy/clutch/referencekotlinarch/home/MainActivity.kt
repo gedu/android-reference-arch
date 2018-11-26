@@ -1,5 +1,6 @@
 package com.teddy.clutch.referencekotlinarch.home
 
+import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -33,15 +34,11 @@ class MainActivity : AppCompatActivity() {
   }
 
   private fun setupViewModels() {
-    viewModel.repositoryJokeResponse.observe(this, Observer {
-      it?.let { resource -> handleJoke(resource) }
-    })
+    viewModel.repositoryJokeResponse.observe { resource -> handleJoke(resource) }
   }
 
   private fun setupListeners() {
-    findViewById<CardView>(R.id.now_btn).setOnClickListener {
-      viewModel.getObservableRandomJoke()
-    }
+    findViewById<CardView>(R.id.now_btn).setOnClickListener { viewModel.getObservableRandomJoke() }
   }
 
   private fun handleJoke(resource: Resource<DaddyJoke>) {
@@ -69,5 +66,9 @@ class MainActivity : AppCompatActivity() {
     loadingView.hide()
     jokeText.hide()
     errorView.show()
+  }
+
+  private fun LiveData<Resource<DaddyJoke>>.observe(l: (resource: Resource<DaddyJoke>) -> Unit) {
+    observe(this@MainActivity, Observer { resource -> resource?.let { l(it) } })
   }
 }

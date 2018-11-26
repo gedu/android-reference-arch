@@ -4,7 +4,7 @@ import com.teddy.clutch.referencekotlinarch.network.home.MainRemoteSource
 
 class MainRepository(private val remoteSource: MainRemoteSource) {
 
-  fun listenResponse() = remoteSource.result
+  val listenResponse get() = remoteSource.result
 
   suspend fun getJokeLiveData() = remoteSource.getJoke()
 }
